@@ -1,6 +1,6 @@
 # Ruby 2.4 with Node.js 6 LTS Dockefile
 
-A minimal Dockerfile based on Ruby 2.4 Dockerfile with Node.js 6 LTS (Boron) installed.
+A minimal Dockerfile based on Ruby 2.4 Dockerfile (regular or slim) with Node.js 6 LTS (Boron) installed.
 
 ## What's included
 
