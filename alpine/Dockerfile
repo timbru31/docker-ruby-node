@@ -1,7 +1,7 @@
 FROM ruby:2.4-alpine
 LABEL maintainer "Tim Brust <tim.brust@sinnerschrader.com>"
 
-ENV REFRESHED_AT 2017-07-12
+ENV REFRESHED_AT 2017-08-15
 
 RUN sed -i -e 's/v3\.4/edge/g' /etc/apk/repositories
 RUN apk update && apk upgrade
