@@ -1,12 +1,12 @@
-# Ruby 2.4 with Node.js 6 LTS Dockefile
+# Ruby 2.4 with Node.js 8 LTS Dockefile
 
-A minimal Dockerfile based on Ruby 2.4 Dockerfile (regular, slim or alpine) with Node.js 6 LTS (Boron) installed.
+A minimal Dockerfile based on Ruby 2.4 Dockerfile (regular, slim or alpine) with Node.js 8 LTS (Carbon) installed.
 
 ## What's included
 
 * Ruby 2.4
-* Node.js 6
-* npm 3
+* Node.js 8
+* npm 5
 * yarn
 
 ---
