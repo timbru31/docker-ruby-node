@@ -1,7 +1,8 @@
 FROM ruby:2.5-slim
 LABEL maintainer "Tim Brust <tim.brust@sinnerschrader.com>"
 
-ENV REFRESHED_AT 2018-01-08
+ARG REFRESHED_AT
+ENV REFRESHED_AT $REFRESHED_AT
 
 RUN apt-get update -qqy && apt-get -qqyy install \
     curl \

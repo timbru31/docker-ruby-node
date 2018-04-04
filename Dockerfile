@@ -1,7 +1,8 @@
 FROM ruby:2.5
 LABEL maintainer "Tim Brust <tim.brust@sinnerschrader.com>"
 
-ENV REFRESHED_AT 2018-01-08
+ARG REFRESHED_AT
+ENV REFRESHED_AT $REFRESHED_AT
 
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
