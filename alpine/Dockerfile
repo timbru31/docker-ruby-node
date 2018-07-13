@@ -7,5 +7,5 @@ ENV REFRESHED_AT $REFRESHED_AT
 RUN sed -i -e 's/v3\.7/edge/g' /etc/apk/repositories
 RUN apk add --no-cache \
   nodejs \
-  nodejs-npm \
+  npm \
   yarn
