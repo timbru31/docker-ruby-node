@@ -1,4 +1,4 @@
-# Ruby 2.5 with Node.js 8 LTS Dockefile
+# Ruby 2.5 with Node.js 8 LTS Dockerfile
 
 [![Docker Automated build](https://img.shields.io/docker/automated/timbru31/ruby-node.svg)](https://hub.docker.com/r/timbru31/ruby-node/)
 [![Docker Build Status](https://img.shields.io/docker/build/timbru31/ruby-node.svg)](https://hub.docker.com/r/timbru31/ruby-node/)
