@@ -4,6 +4,7 @@ LABEL maintainer "Tim Brust <tim.brust@sinnerschrader.com>"
 ARG REFRESHED_AT
 ENV REFRESHED_AT $REFRESHED_AT
 
+ENV LANG C.UTF-8
 # hadolint ignore=DL3009
 RUN apt-get update -qq && apt-get install -qq --no-install-recommends \
     curl \
