@@ -16,3 +16,6 @@ script:
   - docker run --rm -i hadolint/hadolint hadolint --ignore DL3008 - < 2.6/Dockerfile
   - docker run --rm -i hadolint/hadolint hadolint --ignore DL3008 - < 2.6/slim/Dockerfile
   - docker run --rm -i hadolint/hadolint hadolint --ignore DL3018 - < 2.6/alpine/Dockerfile
+  - docker run --rm -i hadolint/hadolint hadolint --ignore DL3008 - < 2.7/Dockerfile
+  - docker run --rm -i hadolint/hadolint hadolint --ignore DL3008 - < 2.7/slim/Dockerfile
+  - docker run --rm -i hadolint/hadolint hadolint --ignore DL3018 - < 2.7/alpine/Dockerfile
