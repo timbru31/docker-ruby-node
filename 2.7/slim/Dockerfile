@@ -1,4 +1,4 @@
-FROM ruby:2.7-rc-slim@sha256:284c63bac3055b402a404edd58ccac4e703f81fb705b5459a5f0cd6dad393489
+FROM ruby:2.7-rc-slim@sha256:f614af34c8ecc4a02a227bd4fa632b23490e4f9ebf223f1e549b1da9c3435741
 LABEL maintainer "Tim Brust <tim.brust@sinnerschrader.com>"
 
 ARG REFRESHED_AT
