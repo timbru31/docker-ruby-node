@@ -9,9 +9,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build the Docker image
         run: |
-          docker run -i $(docker build -q 2.4) /bin/sh -c "ruby --version && node --version"
-          docker run -i $(docker build -q 2.4/slim) /bin/sh -c "ruby --version && node --version"
-          docker run -i $(docker build -q 2.4/alpine) /bin/sh -c "ruby --version && node --version"
           docker run -i $(docker build -q 2.5) /bin/sh -c "ruby --version && node --version"
           docker run -i $(docker build -q 2.5/slim) /bin/sh -c "ruby --version && node --version"
           docker run -i $(docker build -q 2.5/alpine) /bin/sh -c "ruby --version && node --version"

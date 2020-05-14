@@ -4,12 +4,9 @@ services:
   - docker
 
 before_install:
-  -  docker pull hadolint/hadolint
+  - docker pull hadolint/hadolint
 
 script:
-  - docker run --rm -i hadolint/hadolint hadolint --ignore DL3008 - < 2.4/Dockerfile
-  - docker run --rm -i hadolint/hadolint hadolint --ignore DL3008 - < 2.4/slim/Dockerfile
-  - docker run --rm -i hadolint/hadolint hadolint --ignore DL3018 - < 2.4/alpine/Dockerfile
   - docker run --rm -i hadolint/hadolint hadolint --ignore DL3008 - < 2.5/Dockerfile
   - docker run --rm -i hadolint/hadolint hadolint --ignore DL3008 - < 2.5/slim/Dockerfile
   - docker run --rm -i hadolint/hadolint hadolint --ignore DL3018 - < 2.5/alpine/Dockerfile
