@@ -5,11 +5,7 @@ ARG REFRESHED_AT
 ENV REFRESHED_AT $REFRESHED_AT
 
 ENV LANG C.UTF-8
-RUN echo @edge http://dl-cdn.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories && \
-  echo @edge http://dl-cdn.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories && \
-  apk add --no-cache \
-  libstdc++@edge \
-  libuv@edge \
-  nodejs@edge \
-  nodejs-npm@edge \
-  yarn@edge
+RUN apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/main/ --no-cache \
+  nodejs \
+  nodejs-npm \
+  yarn
