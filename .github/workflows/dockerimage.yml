@@ -9,12 +9,21 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build the Docker image
         run: |
+          echo "2.5"
           docker run -i $(docker build -q 2.5) /bin/sh -c "ruby --version && node --version"
+          echo "2.5 slim"
           docker run -i $(docker build -q 2.5/slim) /bin/sh -c "ruby --version && node --version"
+          echo "2.5 alpine"
           docker run -i $(docker build -q 2.5/alpine) /bin/sh -c "ruby --version && node --version"
+          echo "2.6"
           docker run -i $(docker build -q 2.6) /bin/sh -c "ruby --version && node --version"
+          echo "2.6 slim"
           docker run -i $(docker build -q 2.6/slim) /bin/sh -c "ruby --version && node --version"
+          echo "2.6 alpine"
           docker run -i $(docker build -q 2.6/alpine) /bin/sh -c "ruby --version && node --version"
+          echo "2.7"
           docker run -i $(docker build -q 2.7) /bin/sh -c "ruby --version && node --version"
+          echo "2.7 slim"
           docker run -i $(docker build -q 2.7/slim) /bin/sh -c "ruby --version && node --version"
+          echo "2.7 alpine"
           docker run -i $(docker build -q 2.7/alpine) /bin/sh -c "ruby --version && node --version"
