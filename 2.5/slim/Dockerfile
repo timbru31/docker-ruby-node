@@ -1,4 +1,4 @@
-FROM ruby:2.5.8-slim
+FROM ruby:2.5-slim
 LABEL maintainer "Tim Brust <github@timbrust.de>"
 
 ARG REFRESHED_AT
