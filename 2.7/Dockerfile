@@ -5,6 +5,9 @@ ARG REFRESHED_AT
 ENV REFRESHED_AT $REFRESHED_AT
 
 ENV LANG C.UTF-8
+RUN apt-get update -qq && apt-get install -qq --no-install-recommends \
+    ca-certificates
+
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
