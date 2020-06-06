@@ -18,11 +18,11 @@ A minimal Dockerfile based on Ruby (2.5, 2.6 or 2.7) Dockerfile (regular, slim o
 These Dockerfiles leverage the new `buildx` functionality and offer the following platforms:
 - linux/amd64
 - linux/arm64
-- linux/arm/v7
-- linux/arm/v6
+- linux/arm/v7 (not for 2.7-alpine)
+- linux/arm/v6 (not for 2.7-alpine)
 - linux/386
 - linux/ppc64le
-- linux/s390x
+- linux/s390x (not for 2.7-alpine)
 
 ---
 
