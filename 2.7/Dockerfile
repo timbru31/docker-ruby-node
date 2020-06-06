@@ -1,5 +1,5 @@
-FROM ruby:2.7@sha256:60dda781daffd1897c8d53182987672bc5b484400df09d576006c3e9ee7d42b9
-LABEL maintainer "Tim Brust <tim.brust@sinnerschrader.com>"
+FROM ruby:2.7.1
+LABEL maintainer "Tim Brust <github@timbrust.de>"
 
 ARG REFRESHED_AT
 ENV REFRESHED_AT $REFRESHED_AT
