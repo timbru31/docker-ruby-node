@@ -1,7 +1,7 @@
 # Ruby 2.5, 2.6 or 2.7 with Node.js 12 LTS Dockerfile
 
 [![Docker Automated build](https://img.shields.io/docker/automated/timbru31/ruby-node.svg)](https://hub.docker.com/r/timbru31/ruby-node/)
-[![Docker Build Status](https://img.shields.io/docker/build/timbru31/ruby-node.svg)](https://hub.docker.com/r/timbru31/ruby-node/)
+[![buildx Status](https://github.com/timbru31/docker-ruby-node/workflows/buildx/badge.svg)](https://github.com/timbru31/docker-ruby-node/actions?query=workflow%3Abuildx)
 [![Build Status](https://travis-ci.org/timbru31/docker-ruby-node.svg?branch=master)](https://travis-ci.org/timbru31/docker-ruby-node)
 
 A minimal Dockerfile based on Ruby (2.5, 2.6 or 2.7) Dockerfile (regular, slim or alpine) with Node.js 12 LTS (Erbium) installed.
@@ -13,7 +13,7 @@ A minimal Dockerfile based on Ruby (2.5, 2.6 or 2.7) Dockerfile (regular, slim o
 - npm 6
 - yarn
 
-## Available platforms
+### Available platforms
 
 These Dockerfiles leverage the new `buildx` functionality and offer the following platforms:
 - linux/amd64
