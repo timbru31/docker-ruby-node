@@ -20,7 +20,7 @@ These Dockerfiles leverage the new `buildx` functionality and offer the followin
 - linux/arm64
 - linux/arm/v7 (not for 2.7-alpine)
 - linux/arm/v6 (not for 2.7-alpine)
-- linux/386
+- linux/386 (not for regular or slim)
 - linux/ppc64le
 - linux/s390x (not for 2.7-alpine)
 
