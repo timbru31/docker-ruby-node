@@ -13,4 +13,4 @@ RUN apt-get update -qq && apt-get install -qq --no-install-recommends \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
-RUN npm install -g yarn
+RUN npm install -g yarn@1.22.4

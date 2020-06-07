@@ -9,5 +9,5 @@ RUN apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/main/ --no-ca
   nodejs \
   nodejs-npm
 
-RUN npm install -g yarn
+RUN npm install -g yarn@1.22.4
 
