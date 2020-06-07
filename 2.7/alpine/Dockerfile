@@ -7,5 +7,6 @@ ENV REFRESHED_AT $REFRESHED_AT
 ENV LANG C.UTF-8
 RUN apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/main/ --no-cache \
   nodejs \
-  nodejs-npm \
-  yarn
+  nodejs-npm
+
+RUN npm install -g yarn
