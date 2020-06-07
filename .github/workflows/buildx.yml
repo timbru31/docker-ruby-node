@@ -14,28 +14,28 @@ jobs:
         docker-file:
             - path: 2.5
               tags: 2.5
-              platforms: linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6
+              platforms: linux/amd64,linux/arm64,linux/arm/v7
             - path: 2.5/slim
               tags: 2.5-slim
-              platforms: linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6
+              platforms: linux/amd64,linux/arm64,linux/arm/v7
             - path: 2.5/alpine
               tags: 2.5-alpine
               platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
             - path: 2.6
               tags: 2.6
-              platforms: linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6
+              platforms: linux/amd64,linux/arm64,linux/arm/v7
             - path: 2.6/slim
               tags: 2.6-slim
-              platforms: linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6
+              platforms: linux/amd64,linux/arm64,linux/arm/v7
             - path: 2.6/alpine
               tags: 2.6-alpine
               platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
             - path: 2.7
               tags: 2.7,latest
-              platforms: linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6
+              platforms: linux/amd64,linux/arm64,linux/arm/v7
             - path: 2.7/slim
               tags: 2.7-slim,slim
-              platforms: linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6
+              platforms: linux/amd64,linux/arm64,linux/arm/v7
             - path: 2.7/alpine
               tags: 2.7-alpine,alpine
               platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/386
