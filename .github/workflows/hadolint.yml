@@ -8,4 +8,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: brew install hadolint
-      - run: hadolint {2.5,2.6,2.7}/**/Dockerfile
+      - run: hadolint {2.5,2.6,2.7}/**/*Dockerfile
