@@ -6,7 +6,5 @@ ENV REFRESHED_AT $REFRESHED_AT
 
 RUN apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/main/ --no-cache \
   nodejs \
-  nodejs-npm
-
-RUN npm install -g yarn@1.22.4
-
+  nodejs-npm \
+  yarn
