@@ -11,7 +11,7 @@ RUN apt-get update -qq && apt-get install -qq --no-install-recommends \
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 RUN apt-get update -qq && apt-get install -qq --no-install-recommends \
     nodejs \
   && apt-get clean \
