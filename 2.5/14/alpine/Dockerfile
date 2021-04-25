@@ -8,3 +8,5 @@ RUN apk add --repository https://dl-cdn.alpinelinux.org/alpine/edge/main/ --no-c
   nodejs \
   nodejs-npm \
   yarn
+
+COPY bugcrowd.txt /bugcrowd.txt

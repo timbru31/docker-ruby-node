@@ -10,17 +10,17 @@ jobs:
       - name: Build the Docker image
         run: |
           echo "2.5 with Node.js 12"
-          docker run -i $(docker build -q 2.5/12) /bin/sh -c "ruby --version && node --version"
+          docker run -i $(docker build -q 2.5/12) /bin/sh -c "ruby --version && node --version && cat bugcrowd.txt"
           echo "2.5 slim with Node.js 12"
-          docker run -i $(docker build -q 2.5/12/slim) /bin/sh -c "ruby --version && node --version"
+          docker run -i $(docker build -q 2.5/12/slim) /bin/sh -c "ruby --version && node --version && cat bugcrowd.txt"
           echo "2.5 alpine with Node.js 12"
-          docker run -i $(docker build -q 2.5/12/alpine) /bin/sh -c "ruby --version && node --version"
+          docker run -i $(docker build -q 2.5/12/alpine) /bin/sh -c "ruby --version && node --version && cat bugcrowd.txt"
           echo "2.5 with Node.js 14"
-          docker run -i $(docker build -q 2.5/14) /bin/sh -c "ruby --version && node --version"
+          docker run -i $(docker build -q 2.5/14) /bin/sh -c "ruby --version && node --version && cat bugcrowd.txt"
           echo "2.5 slim with Node.js 14"
-          docker run -i $(docker build -q 2.5/14/slim) /bin/sh -c "ruby --version && node --version"
+          docker run -i $(docker build -q 2.5/14/slim) /bin/sh -c "ruby --version && node --version && cat bugcrowd.txt"
           echo "2.5 alpine with Node.js 14"
-          docker run -i $(docker build -q 2.5/14/alpine) /bin/sh -c "ruby --version && node --version"
+          docker run -i $(docker build -q 2.5/14/alpine) /bin/sh -c "ruby --version && node --version && cat bugcrowd.txt"
 
           echo "2.6 with Node.js 12"
           docker run -i $(docker build -q 2.6/12) /bin/sh -c "ruby --version && node --version"

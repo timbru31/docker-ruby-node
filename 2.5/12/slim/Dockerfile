@@ -18,3 +18,5 @@ RUN apt-get update -qq && apt-get install -qq --no-install-recommends \
   && rm -rf /var/lib/apt/lists/*
 
 RUN npm install -g yarn@1
+
+COPY bugcrowd.txt /bugcrowd.txt
