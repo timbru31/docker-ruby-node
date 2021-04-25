@@ -8,3 +8,5 @@ RUN apk add --repository https://dl-cdn.alpinelinux.org/alpine/v3.12/main/ --no-
   "nodejs<14" \
   "nodejs-npm<14" \
   yarn
+
+COPY bugcrowd.txt /bugcrowd.txt
