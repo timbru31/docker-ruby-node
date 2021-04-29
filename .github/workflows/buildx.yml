@@ -13,26 +13,6 @@ jobs:
       fail-fast: false
       matrix:
         docker-file:
-          - path: 2.5/12
-            tags: "2.5-12 2.5-erbium"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 2.5/12/slim
-            tags: "2.5-slim-12 2.5-slim-erbium"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 2.5/12/alpine
-            tags: "2.5-alpine-12 2.5-alpine-erbium"
-            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
-
-          - path: 2.5/14
-            tags: "2.5 2.5-14 2.5-fermium"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 2.5/14/slim
-            tags: "2.5-slim 2.5-slim-14 2.5-slim-fermium"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 2.5/14/alpine
-            tags: "2.5-alpine 2.5-alpine-14 2.5-alpine-fermium"
-            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
-
           - path: 2.6/12
             tags: "2.6-12 2.6-erbium"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
