@@ -41,7 +41,7 @@ jobs:
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 2.7/12/alpine
             tags: "2.7-alpine-12 2.7-alpine-erbium"
-            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/386
+            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
           - path: 2.7/14
             tags: "2.7 2.7-14 2.7-fermium"
@@ -51,7 +51,7 @@ jobs:
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 2.7/14/alpine
             tags: "2.7-alpine 2.7-alpine-14 2.7-alpine-fermium"
-            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/386
+            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
           - path: 3.0/12
             tags: "3.0-12 3.0-erbium"
@@ -61,7 +61,7 @@ jobs:
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 3.0/12/alpine
             tags: "3.0-alpine-12 3.0-alpine-erbium"
-            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/386,linux/arm/v7,linux/arm/v6
+            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
           - path: 3.0/14
             tags: "3.0 3.0-14 3.0-fermium latest"
@@ -71,7 +71,7 @@ jobs:
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 3.0/14/alpine
             tags: "3.0-alpine 3.0-alpine-14 3.0-alpine-fermium alpine"
-            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/386,linux/arm/v7,linux/arm/v6
+            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
     steps:
       - name: Checkout
         uses: actions/checkout@v2.3.5
