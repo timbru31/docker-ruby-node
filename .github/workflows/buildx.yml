@@ -24,13 +24,23 @@ jobs:
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
           - path: 2.6/14
-            tags: "2.6 2.6-14 2.6-fermium"
+            tags: "2.6-14 2.6-fermium"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 2.6/14/slim
-            tags: "2.6-slim 2.6-slim-14 2.6-slim-fermium"
+            tags: "2.6-slim-14 2.6-slim-fermium"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 2.6/14/alpine
-            tags: "2.6-alpine 2.6-alpine-14 2.6-alpine-fermium"
+            tags: "2.6-alpine-14 2.6-alpine-fermium"
+            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
+
+          - path: 2.6/16
+            tags: "2.6 2.6-16 2.6-gallium"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 2.6/16/slim
+            tags: "2.6-slim 2.6-slim-16 2.6-slim-gallium"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 2.6/16/alpine
+            tags: "2.6-alpine 2.6-alpine-16 2.6-alpine-gallium"
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
           - path: 2.7/12
@@ -44,13 +54,23 @@ jobs:
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
           - path: 2.7/14
-            tags: "2.7 2.7-14 2.7-fermium"
+            tags: "2.7-14 2.7-fermium"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 2.7/14/slim
-            tags: "2.7-slim 2.7-slim-14 2.7-slim-fermium"
+            tags: "2.7-slim-14 2.7-slim-fermium"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 2.7/14/alpine
-            tags: "2.7-alpine 2.7-alpine-14 2.7-alpine-fermium"
+            tags: "2.7-alpine-14 2.7-alpine-fermium"
+            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
+
+          - path: 2.7/16
+            tags: "2.7 2.7-16 2.7-gallium"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 2.7/16/slim
+            tags: "2.7-slim 2.7-slim-16 2.7-slim-gallium"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 2.7/16/alpine
+            tags: "2.7-alpine 2.7-alpine-16 2.7-alpine-gallium"
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
           - path: 3.0/12
@@ -64,13 +84,23 @@ jobs:
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
           - path: 3.0/14
-            tags: "3.0 3.0-14 3.0-fermium latest"
+            tags: "3.0-14 3.0-fermium"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 3.0/14/slim
-            tags: "3.0-slim 3.0-slim-14 3.0-slim-fermium slim"
+            tags: "3.0-slim-14 3.0-slim-fermium"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 3.0/14/alpine
-            tags: "3.0-alpine 3.0-alpine-14 3.0-alpine-fermium alpine"
+            tags: "3.0-alpine-14 3.0-alpine-fermium"
+            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
+
+          - path: 3.0/16
+            tags: "3.0 3.0-16 3.0-gallium latest"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 3.0/16/slim
+            tags: "3.0-slim 3.0-slim-16 3.0-slim-gallium slim"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 3.0/16/alpine
+            tags: "3.0-alpine 3.0-alpine-16 3.0-alpine-gallium alpine"
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
     steps:
       - name: Checkout
