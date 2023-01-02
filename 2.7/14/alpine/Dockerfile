@@ -5,7 +5,8 @@ ARG REFRESHED_AT
 ENV REFRESHED_AT $REFRESHED_AT
 
 RUN apk -U upgrade \
+  && apk add --repository https://dl-cdn.alpinelinux.org/alpine/v3.14/main/ \
+    nodejs \
   && apk add --no-cache \
-    "nodejs<16" \
-    "npm<16" \
+    npm \
     yarn
