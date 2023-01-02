@@ -64,7 +64,7 @@ jobs:
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
           - path: 3.1/16
-            tags: "3.1 3.1-16 3.1-gallium latest"
+            tags: "3.1 3.1-16 3.1-gallium"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 3.1/16/slim
             tags: "3.1-slim 3.1-slim-16 3.1-slim-gallium"
