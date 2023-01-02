@@ -6,6 +6,6 @@ ENV REFRESHED_AT $REFRESHED_AT
 
 RUN apk -U upgrade \
   && apk add --no-cache \
-    nodejs \
-    npm \
+    "nodejs<16" \
+    "npm<16" \
     yarn
