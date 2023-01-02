@@ -64,13 +64,33 @@ jobs:
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
           - path: 3.1/16
-            tags: "3.1 3.1-16 3.1-gallium latest"
+            tags: "3.1 3.1-16 3.1-gallium"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 3.1/16/slim
-            tags: "3.1-slim 3.1-slim-16 3.1-slim-gallium slim"
+            tags: "3.1-slim 3.1-slim-16 3.1-slim-gallium"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 3.1/16/alpine
-            tags: "3.1-alpine 3.1-alpine-16 3.0-alpine-gallium alpine"
+            tags: "3.1-alpine 3.1-alpine-16 3.1-alpine-gallium"
+            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
+
+          - path: 3.2/14
+            tags: "3.2-14 3.2-fermium"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 3.2/14/slim
+            tags: "3.2-slim-14 3.2-slim-fermium"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 3.2/14/alpine
+            tags: "3.2-alpine-14 3.2-alpine-fermium"
+            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
+
+          - path: 3.2/16
+            tags: "3.2 3.2-16 3.2-gallium latest"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 3.2/16/slim
+            tags: "3.2-slim 3.2-slim-16 3.2-slim-gallium slim"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 3.2/16/alpine
+            tags: "3.2-alpine 3.2-alpine-16 3.2-alpine-gallium alpine"
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
     steps:
       - name: Checkout
