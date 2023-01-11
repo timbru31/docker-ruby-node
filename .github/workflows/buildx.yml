@@ -24,13 +24,23 @@ jobs:
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
           - path: 2.7/16
-            tags: "2.7 2.7-16 2.7-gallium"
+            tags: "2.7-16 2.7-gallium"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 2.7/16/slim
-            tags: "2.7-slim 2.7-slim-16 2.7-slim-gallium"
+            tags: "2.7-slim-16 2.7-slim-gallium"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 2.7/16/alpine
-            tags: "2.7-alpine 2.7-alpine-16 2.7-alpine-gallium"
+            tags: "2.7-alpine-16 2.7-alpine-gallium"
+            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
+
+          - path: 2.7/18
+            tags: "2.7 2.7-18 2.7-hydrogen"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 2.7/18/slim
+            tags: "2.7-slim 2.7-slim-18 2.7-slim-hydrogen"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 2.7/18/alpine
+            tags: "2.7-alpine 2.7-alpine-18 2.7-alpine-hydrogen"
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
           - path: 3.0/14
@@ -44,13 +54,23 @@ jobs:
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
           - path: 3.0/16
-            tags: "3.0 3.0-16 3.0-gallium"
+            tags: "3.0-16 3.0-gallium"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 3.0/16/slim
-            tags: "3.0-slim 3.0-slim-16 3.0-slim-gallium"
+            tags: "3.0-slim-16 3.0-slim-gallium"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 3.0/16/alpine
-            tags: "3.0-alpine 3.0-alpine-16 3.0-alpine-gallium"
+            tags: "3.0-alpine-16 3.0-alpine-gallium"
+            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
+
+          - path: 3.0/18
+            tags: "3.0 3.0-18 3.0-hydrogen"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 3.0/18/slim
+            tags: "3.0-slim 3.0-slim-18 3.0-slim-hydrogen"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 3.0/18/alpine
+            tags: "3.0-alpine 3.0-alpine-18 3.0-alpine-hydrogen"
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
           - path: 3.1/14
@@ -73,6 +93,16 @@ jobs:
             tags: "3.1-alpine 3.1-alpine-16 3.1-alpine-gallium"
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
+          - path: 3.1/18
+            tags: "3.1-18 3.1-hydrogen"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 3.1/18/slim
+            tags: "3.1-slim-18 3.1-slim-hydrogen"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 3.1/18/alpine
+            tags: "3.1-alpine-18 3.1-alpine-hydrogen"
+            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
+
           - path: 3.2/14
             tags: "3.2-14 3.2-fermium"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
@@ -84,13 +114,23 @@ jobs:
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
           - path: 3.2/16
-            tags: "3.2 3.2-16 3.2-gallium latest"
+            tags: "3.2-16 3.2-gallium"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 3.2/16/slim
-            tags: "3.2-slim 3.2-slim-16 3.2-slim-gallium slim"
+            tags: "3.2-slim-16 3.2-slim-gallium"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 3.2/16/alpine
-            tags: "3.2-alpine 3.2-alpine-16 3.2-alpine-gallium alpine"
+            tags: "3.2-alpine-16 3.2-alpine-gallium"
+            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
+
+          - path: 3.2/18
+            tags: "3.2 3.2-18 3.2-hydrogen latest"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 3.2/18/slim
+            tags: "3.2-slim 3.2-slim-18 3.2-slim-hydrogen slim"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 3.2/18/alpine
+            tags: "3.2-alpine 3.2-alpine-18 3.2-alpine-hydrogen alpine"
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
     steps:
       - name: Checkout
