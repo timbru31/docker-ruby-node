@@ -47,3 +47,17 @@ jobs:
           docker run -i $(docker build -q 3.2/18/slim) /bin/sh -c "ruby --version && node --version"
           echo "3.2 alpine with Node.js 18"
           docker run -i $(docker build -q 3.2/18/alpine) /bin/sh -c "ruby --version && node --version"
+
+  auto-merge:
+    runs-on: ubuntu-latest
+    needs: build
+
+    permissions:
+      pull-requests: write
+      contents: write
+
+    steps:
+      - name: Automatically merge dependabot upgrades
+        uses: fastify/github-action-merge-dependabot@v3
+        with:
+          target: minor
