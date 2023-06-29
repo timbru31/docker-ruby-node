@@ -11,7 +11,7 @@ RUN apt-get update -qq && apt-get install -qq --no-install-recommends \
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-RUN 'Package: nodejs\nPin: origin deb.nodesource.com\nPin-Priority: 1001' > /etc/apt/preferences.d/nodesource \
+RUN echo 'Package: nodejs\nPin: origin deb.nodesource.com\nPin-Priority: 1001' > /etc/apt/preferences.d/nodesource \
   && curl -sL https://deb.nodesource.com/setup_18.x | bash -\
   && apt-get update -qq && apt-get install -qq --no-install-recommends \
     nodejs \
