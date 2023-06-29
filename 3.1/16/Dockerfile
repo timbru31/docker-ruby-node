@@ -6,7 +6,7 @@ ENV REFRESHED_AT $REFRESHED_AT
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-RUN echo 'Package: nodejs\nPin: origin deb.nodesource.com\nPin-Priority: 1001' > /etc/apt/preferences.d/nodesource \
+RUN printf 'Package: nodejs\nPin: origin deb.nodesource.com\nPin-Priority: 1001' > /etc/apt/preferences.d/nodesource \
   && curl -sL https://deb.nodesource.com/setup_16.x | bash -\
   && apt-get update -qq && apt-get install -qq --no-install-recommends \
     nodejs \
