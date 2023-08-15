@@ -11,7 +11,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3.5.3
+
       - name: Build the Docker image
         run: |
           echo "3.0 with Node.js 16"
@@ -52,6 +53,19 @@ jobs:
           docker run -i $(docker build -q 3.2/18/slim) /bin/sh -c "ruby --version && node --version && npm --version"
           echo "3.2 alpine with Node.js 18"
           docker run -i $(docker build -q 3.2/18/alpine) /bin/sh -c "ruby --version && node --version && npm --version"
+
+          echo "3.3 with Node.js 16"
+          docker run -i $(docker build -q 3.3/16) /bin/sh -c "ruby --version && node --version && npm --version"
+          echo "3.3 slim with Node.js 16"
+          docker run -i $(docker build -q 3.3/16/slim) /bin/sh -c "ruby --version && node --version && npm --version"
+          echo "3.3 alpine with Node.js 16"
+          docker run -i $(docker build -q 3.3/16/alpine) /bin/sh -c "ruby --version && node --version && npm --version"
+          echo "3.3 with Node.js 18"
+          docker run -i $(docker build -q 3.3/18) /bin/sh -c "ruby --version && node --version && npm --version"
+          echo "3.3 slim with Node.js 18"
+          docker run -i $(docker build -q 3.3/18/slim) /bin/sh -c "ruby --version && node --version && npm --version"
+          echo "3.3 alpine with Node.js 18"
+          docker run -i $(docker build -q 3.3/18/alpine) /bin/sh -c "ruby --version && node --version && npm --version"
 
   auto-merge:
     runs-on: ubuntu-latest
