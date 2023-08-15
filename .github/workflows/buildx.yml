@@ -10,7 +10,7 @@ on:
 
 jobs:
   buildx:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
@@ -74,9 +74,29 @@ jobs:
           - path: 3.2/18/alpine
             tags: "3.2-alpine 3.2-alpine-18 3.2-alpine-hydrogen alpine"
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
+
+          - path: 3.3/16
+            tags: "3.3-16 3.3-gallium"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 3.3/16/slim
+            tags: "3.3-slim-16 3.3-slim-gallium"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 3.3/16/alpine
+            tags: "3.3-alpine-16 3.3-alpine-gallium"
+            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
+
+          - path: 3.3/18
+            tags: "3.3 3.3-18 3.3-hydrogen"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 3.3/18/slim
+            tags: "3.3-slim 3.3-slim-18 3.3-slim-hydrogen"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 3.3/18/alpine
+            tags: "3.3-alpine 3.3-alpine-18 3.3-alpine-hydrogen"
+            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.5.3
 
       - name: Prepare
         id: prepare
