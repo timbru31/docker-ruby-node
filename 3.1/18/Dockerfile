@@ -3,6 +3,7 @@ LABEL maintainer "Tim Brust <github@timbrust.de>"
 
 ARG REFRESHED_AT
 ENV REFRESHED_AT $REFRESHED_AT
+ENV NODE_MAJOR=18
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 

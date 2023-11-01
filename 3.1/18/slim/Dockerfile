@@ -3,7 +3,7 @@ LABEL maintainer "Tim Brust <github@timbrust.de>"
 
 ARG REFRESHED_AT
 ENV REFRESHED_AT $REFRESHED_AT
-ENV NODE_MAJOR 18
+ENV NODE_MAJOR=18
 
 # hadolint ignore=DL3009
 RUN apt-get update -qq && apt-get install -qq --no-install-recommends \
