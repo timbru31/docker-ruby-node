@@ -8,7 +8,8 @@ ARG NODE_MAJOR=18
 # hadolint ignore=DL3009
 RUN apt-get update -qq && apt-get install -qq --no-install-recommends \
     curl \
-    gnupg2
+    gnupg2 \
+    libatomic1
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
