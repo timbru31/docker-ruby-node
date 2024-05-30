@@ -15,16 +15,6 @@ jobs:
       fail-fast: false
       matrix:
         docker-file:
-          - path: 3.0/18
-            tags: "3.0 3.0-18 3.0-hydrogen"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 3.0/18/slim
-            tags: "3.0-slim 3.0-slim-18 3.0-slim-hydrogen"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 3.0/18/alpine
-            tags: "3.0-alpine 3.0-alpine-18 3.0-alpine-hydrogen"
-            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
-
           - path: 3.1/18
             tags: "3.1-18 3.1-hydrogen"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
@@ -53,16 +43,6 @@ jobs:
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 3.3/18/alpine
             tags: "3.3-alpine 3.3-alpine-18 3.3-alpine-hydrogen"
-            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
-
-          - path: 3.0/20
-            tags: "3.0 3.0-20 3.0-iron"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 3.0/20/slim
-            tags: "3.0-slim 3.0-slim-20 3.0-slim-iron"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 3.0/20/alpine
-            tags: "3.0-alpine 3.0-alpine-20 3.0-alpine-iron"
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
           - path: 3.1/20
