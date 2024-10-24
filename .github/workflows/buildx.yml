@@ -36,13 +36,23 @@ jobs:
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
           - path: 3.3/18
-            tags: "3.3 3.3-18 3.3-hydrogen"
+            tags: "3.3-18 3.3-hydrogen"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 3.3/18/slim
-            tags: "3.3-slim 3.3-slim-18 3.3-slim-hydrogen"
+            tags: "3.3-slim-18 3.3-slim-hydrogen"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 3.3/18/alpine
-            tags: "3.3-alpine 3.3-alpine-18 3.3-alpine-hydrogen"
+            tags: "3.3-alpine-18 3.3-alpine-hydrogen"
+            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
+
+          - path: 3.4/18
+            tags: "3.4-18 3.4-hydrogen"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 3.4/18/slim
+            tags: "3.4-slim-18 3.4-slim-hydrogen"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 3.4/18/alpine
+            tags: "3.4-alpine-18 3.4-alpine-hydrogen"
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
           - path: 3.1/20
@@ -56,23 +66,33 @@ jobs:
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
           - path: 3.2/20
-            tags: "3.2 3.2-20 3.2-iron latest"
+            tags: "3.2 3.2-20 3.2-iron"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 3.2/20/slim
-            tags: "3.2-slim 3.2-slim-20 3.2-slim-iron slim"
+            tags: "3.2-slim 3.2-slim-20 3.2-slim-iron"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 3.2/20/alpine
-            tags: "3.2-alpine 3.2-alpine-20 3.2-alpine-iron alpine"
+            tags: "3.2-alpine 3.2-alpine-20 3.2-alpine-iron"
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
           - path: 3.3/20
-            tags: "3.3 3.3-20 3.3-iron"
+            tags: "3.3-20 3.3-iron 3.3 3 latest"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 3.3/20/slim
-            tags: "3.3-slim 3.3-slim-20 3.3-slim-iron"
+            tags: " 3.3-slim-20 3.3-slim-iron 3.3-slim 3-slim slim"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 3.3/20/alpine
-            tags: "3.3-alpine 3.3-alpine-20 3.3-alpine-iron"
+            tags: "3.3-alpine-20 3.3-alpine-iron 3.3-alpine  3-alpine alpine"
+            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
+
+          - path: 3.4/20
+            tags: "3.4-20 3.4-iron 3.4"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 3.4/20/slim
+            tags: "3.4-slim-20 3.4-slim-iron 3.4-slim"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 3.4/20/alpine
+            tags: "3.4-alpine-20 3.4-alpine-iron 3.4-alpine"
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
     steps:
       - name: Checkout
