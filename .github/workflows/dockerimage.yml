@@ -70,6 +70,34 @@ jobs:
           docker run -i $(docker build -q 3.4/20/slim) /bin/sh -c "ruby --version && node --version && npm --version"
           echo "3.4 alpine with Node.js 20"
           docker run -i $(docker build -q 3.4/20/alpine) /bin/sh -c "ruby --version && node --version && npm --version"
+
+          echo "3.1 with Node.js 22"
+          docker run -i $(docker build -q 3.1/22) /bin/sh -c "ruby --version && node --version && npm --version"
+          echo "3.1 slim with Node.js 22"
+          docker run -i $(docker build -q 3.1/22/slim) /bin/sh -c "ruby --version && node --version && npm --version"
+          echo "3.1 alpine with Node.js 22"
+          docker run -i $(docker build -q 3.1/22/alpine) /bin/sh -c "ruby --version && node --version && npm --version"
+
+          echo "3.2 with Node.js 22"
+          docker run -i $(docker build -q 3.2/22) /bin/sh -c "ruby --version && node --version && npm --version"
+          echo "3.2 slim with Node.js 22"
+          docker run -i $(docker build -q 3.2/22/slim) /bin/sh -c "ruby --version && node --version && npm --version"
+          echo "3.2 alpine with Node.js 22"
+          docker run -i $(docker build -q 3.2/22/alpine) /bin/sh -c "ruby --version && node --version && npm --version"
+
+          echo "3.3 with Node.js 22"
+          docker run -i $(docker build -q 3.3/22) /bin/sh -c "ruby --version && node --version && npm --version"
+          echo "3.3 slim with Node.js 22"
+          docker run -i $(docker build -q 3.3/22/slim) /bin/sh -c "ruby --version && node --version && npm --version"
+          echo "3.3 alpine with Node.js 22"
+          docker run -i $(docker build -q 3.3/22/alpine) /bin/sh -c "ruby --version && node --version && npm --version"
+
+          echo "3.4 with Node.js 22"
+          docker run -i $(docker build -q 3.4/22) /bin/sh -c "ruby --version && node --version && npm --version"
+          echo "3.4 slim with Node.js 22"
+          docker run -i $(docker build -q 3.4/22/slim) /bin/sh -c "ruby --version && node --version && npm --version"
+          echo "3.4 alpine with Node.js 22"
+          docker run -i $(docker build -q 3.4/22/alpine) /bin/sh -c "ruby --version && node --version && npm --version"
   auto-merge:
     runs-on: ubuntu-latest
     needs: build
