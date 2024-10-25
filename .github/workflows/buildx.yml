@@ -26,13 +26,13 @@ jobs:
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
           - path: 3.2/18
-            tags: "3.2 3.2-18 3.2-hydrogen"
+            tags: "3.2-18 3.2-hydrogen"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 3.2/18/slim
-            tags: "3.2-slim 3.2-slim-18 3.2-slim-hydrogen"
+            tags: "3.2-slim-18 3.2-slim-hydrogen"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 3.2/18/alpine
-            tags: "3.2-alpine 3.2-alpine-18 3.2-alpine-hydrogen"
+            tags: "3.2-alpine-18 3.2-alpine-hydrogen"
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
           - path: 3.3/18
@@ -56,23 +56,23 @@ jobs:
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
           - path: 3.1/20
-            tags: "3.1-20 3.1-iron"
+            tags: "3.1-20 3.1-iron 3.1"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 3.1/20/slim
-            tags: "3.1-slim-20 3.1-slim-iron"
+            tags: "3.1-slim-20 3.1-slim-iron 3.1-slim"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 3.1/20/alpine
-            tags: "3.1-alpine-20 3.1-alpine-iron"
+            tags: "3.1-alpine-20 3.1-alpine-iron 3.1-alpine"
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
           - path: 3.2/20
-            tags: "3.2 3.2-20 3.2-iron"
+            tags: "3.2-20 3.2-iron 3.2"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 3.2/20/slim
-            tags: "3.2-slim 3.2-slim-20 3.2-slim-iron"
+            tags: "3.2-slim-20 3.2-slim-iron 3.2-slim"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 3.2/20/alpine
-            tags: "3.2-alpine 3.2-alpine-20 3.2-alpine-iron"
+            tags: "3.2-alpine-20 3.2-alpine-iron 3.2-alpine"
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
           - path: 3.3/20
@@ -82,7 +82,7 @@ jobs:
             tags: " 3.3-slim-20 3.3-slim-iron 3.3-slim 3-slim slim"
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 3.3/20/alpine
-            tags: "3.3-alpine-20 3.3-alpine-iron 3.3-alpine  3-alpine alpine"
+            tags: "3.3-alpine-20 3.3-alpine-iron 3.3-alpine 3-alpine alpine"
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
           - path: 3.4/20
@@ -93,6 +93,46 @@ jobs:
             platforms: linux/amd64,linux/arm64,linux/arm/v7
           - path: 3.4/20/alpine
             tags: "3.4-alpine-20 3.4-alpine-iron 3.4-alpine"
+            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
+
+          - path: 3.1/22
+            tags: "3.1-22 3.1-jod"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 3.1/22/slim
+            tags: "3.1-slim-22 3.1-slim-jod"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 3.1/22/alpine
+            tags: "3.1-alpine-22 3.1-alpine-jod"
+            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
+
+          - path: 3.2/22
+            tags: "3.2-22 3.2-jod"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 3.2/22/slim
+            tags: "3.2-slim-22 3.2-slim-jod"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 3.2/22/alpine
+            tags: "3.2-alpine-22 3.2-alpine-jod"
+            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
+
+          - path: 3.3/22
+            tags: "3.3-22 3.3-jod"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 3.3/22/slim
+            tags: "3.3-slim-22 3.3-slim-jod"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 3.3/22/alpine
+            tags: "3.3-alpine-22 3.3-alpine-jod"
+            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
+
+          - path: 3.4/22
+            tags: "3.4-22 3.4-jod"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 3.4/22/slim
+            tags: "3.4-slim-22 3.4-slim-jod"
+            platforms: linux/amd64,linux/arm64,linux/arm/v7
+          - path: 3.4/22/alpine
+            tags: "3.4-alpine-22 3.4-alpine-jod"
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
     steps:
       - name: Checkout
