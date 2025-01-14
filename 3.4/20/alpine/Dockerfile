@@ -1,4 +1,4 @@
-FROM ruby:3.4-rc-alpine
+FROM ruby:3.4-alpine
 LABEL maintainer "Tim Brust <github@timbrust.de>"
 
 ARG REFRESHED_AT
