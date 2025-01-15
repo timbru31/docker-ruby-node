@@ -22,10 +22,15 @@ jobs:
 
       - name: Build and test Docker image
         run: |
-          VARIANT_PATH="${{ matrix.variant != 'default' && '/${{ matrix.variant }}' || '' }}"
-          IMAGE_PATH="${{ matrix.ruby-version }}/${{ matrix.node-version }}${VARIANT_PATH}"
-          VARIANT_LABEL="${{ matrix.variant != 'default' && ' ${{ matrix.variant }}' || '' }}"
+          if [ "${{ matrix.variant }}" = "default" ]; then
+            VARIANT_PATH=""
+            VARIANT_LABEL=""
+          else
+            VARIANT_PATH="/${{ matrix.variant }}"
+            VARIANT_LABEL=" ${{ matrix.variant }}"
+          fi
 
+          IMAGE_PATH="${{ matrix.ruby-version }}/${{ matrix.node-version }}${VARIANT_PATH}"
           echo "${{ matrix.ruby-version }} with Node.js ${{ matrix.node-version }}${VARIANT_LABEL}"
 
           # Run container and capture version outputs
@@ -37,7 +42,7 @@ jobs:
             echo "::error::Expected Ruby ${{ matrix.ruby-version }} but got different version"
             exit 1
           fi
-          
+
           # Check Node version
           if ! echo "$VERSIONS" | grep -q "v${{ matrix.node-version }}"; then
             echo "::error::Expected Node.js ${{ matrix.node-version }} but got different version"
@@ -50,7 +55,6 @@ jobs:
     permissions:
       pull-requests: write
       contents: write
-
     steps:
       - name: Automatically merge dependabot upgrades
         uses: fastify/github-action-merge-dependabot@v3.11.0
