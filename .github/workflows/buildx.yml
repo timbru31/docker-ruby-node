@@ -14,150 +14,52 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        docker-file:
-          - path: 3.1/18
-            tags: "3.1-18 3.1-hydrogen"
+        ruby-version: [3.1, 3.2, 3.3, 3.4]
+        node-version: [18, 20, 22]
+        variant: [default, slim, alpine]
+        include:
+          - variant: default
             platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 3.1/18/slim
-            tags: "3.1-slim-18 3.1-slim-hydrogen"
+          - variant: slim
             platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 3.1/18/alpine
-            tags: "3.1-alpine-18 3.1-alpine-hydrogen"
+          - variant: alpine
             platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
-          - path: 3.2/18
-            tags: "3.2-18 3.2-hydrogen"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 3.2/18/slim
-            tags: "3.2-slim-18 3.2-slim-hydrogen"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 3.2/18/alpine
-            tags: "3.2-alpine-18 3.2-alpine-hydrogen"
-            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
-
-          - path: 3.3/18
-            tags: "3.3-18 3.3-hydrogen"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 3.3/18/slim
-            tags: "3.3-slim-18 3.3-slim-hydrogen"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 3.3/18/alpine
-            tags: "3.3-alpine-18 3.3-alpine-hydrogen"
-            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
-
-          - path: 3.4/18
-            tags: "3.4-18 3.4-hydrogen"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 3.4/18/slim
-            tags: "3.4-slim-18 3.4-slim-hydrogen"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 3.4/18/alpine
-            tags: "3.4-alpine-18 3.4-alpine-hydrogen"
-            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
-
-          - path: 3.1/20
-            tags: "3.1-20 3.1-iron 3.1"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 3.1/20/slim
-            tags: "3.1-slim-20 3.1-slim-iron 3.1-slim"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 3.1/20/alpine
-            tags: "3.1-alpine-20 3.1-alpine-iron 3.1-alpine"
-            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
-
-          - path: 3.2/20
-            tags: "3.2-20 3.2-iron 3.2"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 3.2/20/slim
-            tags: "3.2-slim-20 3.2-slim-iron 3.2-slim"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 3.2/20/alpine
-            tags: "3.2-alpine-20 3.2-alpine-iron 3.2-alpine"
-            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
-
-          - path: 3.3/20
-            tags: "3.3-20 3.3-iron 3.3 3 latest"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 3.3/20/slim
-            tags: " 3.3-slim-20 3.3-slim-iron 3.3-slim 3-slim slim"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 3.3/20/alpine
-            tags: "3.3-alpine-20 3.3-alpine-iron 3.3-alpine 3-alpine alpine"
-            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
-
-          - path: 3.4/20
-            tags: "3.4-20 3.4-iron 3.4"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 3.4/20/slim
-            tags: "3.4-slim-20 3.4-slim-iron 3.4-slim"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 3.4/20/alpine
-            tags: "3.4-alpine-20 3.4-alpine-iron 3.4-alpine"
-            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
-
-          - path: 3.1/22
-            tags: "3.1-22 3.1-jod"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 3.1/22/slim
-            tags: "3.1-slim-22 3.1-slim-jod"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 3.1/22/alpine
-            tags: "3.1-alpine-22 3.1-alpine-jod"
-            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
-
-          - path: 3.2/22
-            tags: "3.2-22 3.2-jod"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 3.2/22/slim
-            tags: "3.2-slim-22 3.2-slim-jod"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 3.2/22/alpine
-            tags: "3.2-alpine-22 3.2-alpine-jod"
-            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
-
-          - path: 3.3/22
-            tags: "3.3-22 3.3-jod"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 3.3/22/slim
-            tags: "3.3-slim-22 3.3-slim-jod"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 3.3/22/alpine
-            tags: "3.3-alpine-22 3.3-alpine-jod"
-            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
-
-          - path: 3.4/22
-            tags: "3.4-22 3.4-jod"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 3.4/22/slim
-            tags: "3.4-slim-22 3.4-slim-jod"
-            platforms: linux/amd64,linux/arm64,linux/arm/v7
-          - path: 3.4/22/alpine
-            tags: "3.4-alpine-22 3.4-alpine-jod"
-            platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4.2.2
+      - uses: actions/checkout@v4.2.2
 
-      - name: Prepare
+      - name: Set Node.js codename
+        id: nodename
+        run: |
+          case "${{ matrix.node-version }}" in
+            "18") echo "codename=hydrogen" >> $GITHUB_OUTPUT ;;
+            "20") echo "codename=iron" >> $GITHUB_OUTPUT ;;
+            "22") echo "codename=jod" >> $GITHUB_OUTPUT ;;
+            "24") echo "codename=krypton" >> $GITHUB_OUTPUT ;;
+            "26") echo "codename=lithium" >> $GITHUB_OUTPUT ;;
+            "28") echo "codename=magnesium" >> $GITHUB_OUTPUT ;;
+          esac
+
+      - name: Generate tags
         id: prepare
         run: |
           DOCKER_IMAGE=timbru31/ruby-node
-
-          TEMP="${{ matrix.docker-file.tags }}"
-          TAGZ=($TEMP)
-          VERSION=${TAGZ[0]}
-
-          for i in "${!TAGZ[@]}"; do
-            if [ "$i" -eq "0" ];
-            then
-              TAGS="${DOCKER_IMAGE}:${TAGZ[$i]}"
-            else
-              TAGS="${TAGS},${DOCKER_IMAGE}:${TAGZ[$i]}"
+          VERSION="${{ matrix.ruby-version }}"
+          NODE_CODENAME=${{ steps.nodename.outputs.codename }}
+          VARIANT="${{ matrix.variant != 'default' && '-${{ matrix.variant }}' || '' }}"
+          TAGS="${DOCKER_IMAGE}:${VERSION}${VARIANT}-${{ matrix.node-version }}"
+          TAGS="${TAGS},${DOCKER_IMAGE}:${VERSION}${VARIANT}-${NODE_CODENAME}"
+          if [ "${{ matrix.ruby-version }}" = "3.4" ] && [ "${{ matrix.node-version }}" = "22" ]; then
+            if [ "${{ matrix.variant }}" = "default" ]; then
+              TAGS="${TAGS},${DOCKER_IMAGE}:3,${DOCKER_IMAGE}:latest"
+            elif [ "${{ matrix.variant }}" = "slim" ]; then
+              TAGS="${TAGS},${DOCKER_IMAGE}:3-slim,${DOCKER_IMAGE}:slim"
+            elif [ "${{ matrix.variant }}" = "alpine" ]; then
+              TAGS="${TAGS},${DOCKER_IMAGE}:3-alpine,${DOCKER_IMAGE}:alpine"
             fi
-          done
-
+          fi
           echo "docker_image=${DOCKER_IMAGE}" >> $GITHUB_OUTPUT
-          echo "version=${VERSION}" >> $GITHUB_OUTPUT
+          echo "version=${VERSION}${VARIANT}-${{ matrix.node-version }}" >> $GITHUB_OUTPUT
           echo "tags=${TAGS}" >> $GITHUB_OUTPUT
 
       - name: Set up QEMU
@@ -169,18 +71,15 @@ jobs:
         with:
           install: true
 
-      - name: Available platforms
-        run: echo ${{ steps.buildx.outputs.platforms }}
-
       - name: Docker Buildx (build)
         uses: docker/build-push-action@v6.11.0
         if: success() && !contains(github.ref, 'master')
         with:
           push: false
-          context: ./${{ matrix.docker-file.path }}
-          file: ./${{ matrix.docker-file.path }}/Dockerfile
+          context: ./${{ matrix.ruby-version }}/${{ matrix.node-version }}${{ matrix.variant != 'default' && '/${{ matrix.variant }}' || '' }}
+          file: ./${{ matrix.ruby-version }}/${{ matrix.node-version }}${{ matrix.variant != 'default' && '/${{ matrix.variant }}' || '' }}/Dockerfile
           build-args: REFRESHED_AT=$(date +%Y-%m-%d)
-          platforms: ${{ matrix.docker-file.platforms }}
+          platforms: ${{ matrix.platforms }}
           tags: ${{ steps.prepare.outputs.tags }}
 
       - name: Docker Login
@@ -195,16 +94,16 @@ jobs:
         if: success() && github.event_name != 'pull_request' && contains(github.ref, 'master')
         with:
           push: true
-          context: ./${{ matrix.docker-file.path }}
-          file: ./${{ matrix.docker-file.path }}/Dockerfile
+          context: ./${{ matrix.ruby-version }}/${{ matrix.node-version }}${{ matrix.variant != 'default' && '/${{ matrix.variant }}' || '' }}
+          file: ./${{ matrix.ruby-version }}/${{ matrix.node-version }}${{ matrix.variant != 'default' && '/${{ matrix.variant }}' || '' }}/Dockerfile
           build-args: REFRESHED_AT=$(date +%Y-%m-%d)
-          platforms: ${{ matrix.docker-file.platforms }}
+          platforms: ${{ matrix.platforms }}
           tags: ${{ steps.prepare.outputs.tags }}
 
       - name: Inspect Image
         if: always() && github.event_name != 'pull_request' && contains(github.ref, 'master')
         run: |
-          docker buildx imagetools inspect ${{ steps.prepare.outputs.docker_image }}:${{ steps.prepare.outputs.version }}
+          docker buildx imagetools inspect $(echo "${{ steps.prepare.outputs.tags }}" | cut -d',' -f1)
 
       - name: Clear
         if: always() && github.event_name != 'pull_request'
