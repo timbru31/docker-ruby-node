@@ -76,7 +76,7 @@ jobs:
           install: true
 
       - name: Docker Buildx (build)
-        uses: docker/build-push-action@v6.11.0
+        uses: docker/build-push-action@v6.12.0
         env:
           BUILD_PATH: ./${{ matrix.ruby-version }}/${{ matrix.node-version }}${{ matrix.variant == 'default' && '' || '/${{ matrix.variant }}' }}
         if: success() && !contains(github.ref, 'master')
@@ -96,7 +96,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Docker Buildx (push)
-        uses: docker/build-push-action@v6.11.0
+        uses: docker/build-push-action@v6.12.0
         env:
           BUILD_PATH: ./${{ matrix.ruby-version }}/${{ matrix.node-version }}${{ matrix.variant == 'default' && '' || '/${{ matrix.variant }}' }}
         if: success() && github.event_name != 'pull_request' && contains(github.ref, 'master')
