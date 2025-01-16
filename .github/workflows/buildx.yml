@@ -46,7 +46,11 @@ jobs:
           DOCKER_IMAGE=timbru31/ruby-node
           VERSION="${{ matrix.ruby-version }}"
           NODE_CODENAME=${{ steps.nodename.outputs.codename }}
-          VARIANT="${{ matrix.variant != 'default' && '-${{ matrix.variant }}' || '' }}"
+          if [ "${{ matrix.variant }}" = "default" ]; then
+            VARIANT=""
+          else
+            VARIANT="-${{ matrix.variant }}"
+          fi
           TAGS="${DOCKER_IMAGE}:${VERSION}${VARIANT}-${{ matrix.node-version }}"
           TAGS="${TAGS},${DOCKER_IMAGE}:${VERSION}${VARIANT}-${NODE_CODENAME}"
           if [ "${{ matrix.ruby-version }}" = "3.4" ] && [ "${{ matrix.node-version }}" = "22" ]; then
@@ -71,13 +75,22 @@ jobs:
         with:
           install: true
 
+      - name: Set build path
+        id: buildpath
+        run: |
+          if [ "${{ matrix.variant }}" = "default" ]; then
+            echo "path=./${{ matrix.ruby-version }}/${{ matrix.node-version }}" >> $GITHUB_OUTPUT
+          else
+            echo "path=./${{ matrix.ruby-version }}/${{ matrix.node-version }}/${{ matrix.variant }}" >> $GITHUB_OUTPUT
+          fi
+
       - name: Docker Buildx (build)
         uses: docker/build-push-action@v6.12.0
         if: success() && !contains(github.ref, 'master')
         with:
           push: false
-          context: ./${{ matrix.ruby-version }}/${{ matrix.node-version }}${{ matrix.variant != 'default' && '/${{ matrix.variant }}' || '' }}
-          file: ./${{ matrix.ruby-version }}/${{ matrix.node-version }}${{ matrix.variant != 'default' && '/${{ matrix.variant }}' || '' }}/Dockerfile
+          context: ${{ steps.buildpath.outputs.path }}
+          file: ${{ steps.buildpath.outputs.path }}/Dockerfile
           build-args: REFRESHED_AT=$(date +%Y-%m-%d)
           platforms: ${{ matrix.platforms }}
           tags: ${{ steps.prepare.outputs.tags }}
@@ -94,8 +107,8 @@ jobs:
         if: success() && github.event_name != 'pull_request' && contains(github.ref, 'master')
         with:
           push: true
-          context: ./${{ matrix.ruby-version }}/${{ matrix.node-version }}${{ matrix.variant != 'default' && '/${{ matrix.variant }}' || '' }}
-          file: ./${{ matrix.ruby-version }}/${{ matrix.node-version }}${{ matrix.variant != 'default' && '/${{ matrix.variant }}' || '' }}/Dockerfile
+          context: ${{ steps.buildpath.outputs.path }}
+          file: ${{ steps.buildpath.outputs.path }}/Dockerfile
           build-args: REFRESHED_AT=$(date +%Y-%m-%d)
           platforms: ${{ matrix.platforms }}
           tags: ${{ steps.prepare.outputs.tags }}
