@@ -77,10 +77,12 @@ jobs:
 
       - name: Docker Buildx (build)
         uses: docker/build-push-action@v6.11.0
+        env:
+          BUILD_PATH: ./${{ matrix.ruby-version }}/${{ matrix.node-version }}${{ matrix.variant == 'default' && '' || '/${{ matrix.variant }}' }}
         if: success() && !contains(github.ref, 'master')
         with:
           push: false
-          context: ./${{ matrix.ruby-version }}/${{ matrix.node-version }}${{ matrix.variant != 'default' && '/${{ matrix.variant }}' || '' }}
+          context: ${{ env.BUILD_PATH }}
           file: ./${{ matrix.ruby-version }}/${{ matrix.node-version }}${{ matrix.variant != 'default' && '/${{ matrix.variant }}' || '' }}/Dockerfile
           build-args: REFRESHED_AT=$(date +%Y-%m-%d)
           platforms: ${{ matrix.platforms }}
@@ -95,10 +97,12 @@ jobs:
 
       - name: Docker Buildx (push)
         uses: docker/build-push-action@v6.11.0
+        env:
+          BUILD_PATH: ./${{ matrix.ruby-version }}/${{ matrix.node-version }}${{ matrix.variant == 'default' && '' || '/${{ matrix.variant }}' }}
         if: success() && github.event_name != 'pull_request' && contains(github.ref, 'master')
         with:
           push: true
-          context: ./${{ matrix.ruby-version }}/${{ matrix.node-version }}${{ matrix.variant != 'default' && '/${{ matrix.variant }}' || '' }}
+          context: ${{ env.BUILD_PATH }}
           file: ./${{ matrix.ruby-version }}/${{ matrix.node-version }}${{ matrix.variant != 'default' && '/${{ matrix.variant }}' || '' }}/Dockerfile
           build-args: REFRESHED_AT=$(date +%Y-%m-%d)
           platforms: ${{ matrix.platforms }}
