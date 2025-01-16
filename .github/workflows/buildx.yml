@@ -46,7 +46,7 @@ jobs:
           DOCKER_IMAGE=timbru31/ruby-node
           VERSION="${{ matrix.ruby-version }}"
           NODE_CODENAME=${{ steps.nodename.outputs.codename }}
-          VARIANT="${{ matrix.variant != 'default' && '-${{ matrix.variant }}' || '' }}"
+          VARIANT="${{ matrix.variant == 'default' && '' || concat('-', matrix.variant) }}"
           TAGS="${DOCKER_IMAGE}:${VERSION}${VARIANT}-${{ matrix.node-version }}"
           TAGS="${TAGS},${DOCKER_IMAGE}:${VERSION}${VARIANT}-${NODE_CODENAME}"
           if [ "${{ matrix.ruby-version }}" = "3.4" ] && [ "${{ matrix.node-version }}" = "22" ]; then
