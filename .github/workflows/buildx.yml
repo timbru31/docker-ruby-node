@@ -83,6 +83,21 @@ jobs:
             echo "path=./${{ matrix.ruby-version }}/${{ matrix.node-version }}/${{ matrix.variant }}" >> $GITHUB_OUTPUT
           fi
 
+      - name: Set platforms
+        id: platforms
+        shell: bash
+        run: |
+          BASE_PLATFORMS="${{ matrix.platforms }}"
+          NODE_MAJOR="${{ matrix.node-version }}"
+          # For Node >=24, remove linux/arm/v7 from the variant's platform list
+          if [ "$NODE_MAJOR" -ge 24 ]; then
+            # Remove ',linux/arm/v7' and 'linux/arm/v7,' and standalone 'linux/arm/v7'
+            PLATFORMS="$(echo "$BASE_PLATFORMS" | sed -e 's/,*linux\/arm\/v7,*//g' -e 's/,,/,/g' -e 's/^,//' -e 's/,$//')"
+          else
+            PLATFORMS="$BASE_PLATFORMS"
+          fi
+          echo "platforms=$PLATFORMS" >> "$GITHUB_OUTPUT"
+
       - name: Docker Buildx (build)
         uses: docker/build-push-action@v6.18.0
         if: success() && !contains(github.ref, 'master')
@@ -91,7 +106,7 @@ jobs:
           context: ${{ steps.buildpath.outputs.path }}
           file: ${{ steps.buildpath.outputs.path }}/Dockerfile
           build-args: REFRESHED_AT=$(date +%Y-%m-%d)
-          platforms: ${{ matrix.platforms }}
+          platforms: ${{ steps.platforms.outputs.platforms }}
           tags: ${{ steps.prepare.outputs.tags }}
 
       - name: Docker Login
@@ -109,7 +124,7 @@ jobs:
           context: ${{ steps.buildpath.outputs.path }}
           file: ${{ steps.buildpath.outputs.path }}/Dockerfile
           build-args: REFRESHED_AT=$(date +%Y-%m-%d)
-          platforms: ${{ matrix.platforms }}
+          platforms: ${{ steps.platforms.outputs.platforms }}
           tags: ${{ steps.prepare.outputs.tags }}
 
       - name: Inspect Image
