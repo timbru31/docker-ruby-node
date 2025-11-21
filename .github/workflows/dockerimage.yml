@@ -18,7 +18,7 @@ jobs:
         variant: [default, slim, alpine]
 
     steps:
-      - uses: actions/checkout@v5.0.1
+      - uses: actions/checkout@v6.0.0
 
       - name: Build and test Docker image
         run: |
