@@ -14,7 +14,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ruby-version: [3.2, 3.3, 3.4, 3.5]
+        ruby-version: ["3.2", "3.3", "3.4", "4.0"]
         node-version: [20, 22, 24]
         variant: [default, slim, alpine]
         include:
@@ -52,7 +52,7 @@ jobs:
           fi
           TAGS="${DOCKER_IMAGE}:${VERSION}${VARIANT}-${{ matrix.node-version }}"
           TAGS="${TAGS},${DOCKER_IMAGE}:${VERSION}${VARIANT}-${NODE_CODENAME}"
-          if [ "${{ matrix.ruby-version }}" = "3.4" ] && [ "${{ matrix.node-version }}" = "22" ]; then
+          if [ "${{ matrix.ruby-version }}" = "4.0" ] && [ "${{ matrix.node-version }}" = "24" ]; then
             if [ "${{ matrix.variant }}" = "default" ]; then
               TAGS="${TAGS},${DOCKER_IMAGE}:3,${DOCKER_IMAGE}:latest"
             elif [ "${{ matrix.variant }}" = "slim" ]; then
