@@ -1,8 +1,8 @@
 FROM ruby:3.2-alpine
-LABEL maintainer "Tim Brust <github@timbrust.de>"
+LABEL maintainer="Tim Prüssing <github@timbrust.de>"
 
 ARG REFRESHED_AT
-ENV REFRESHED_AT $REFRESHED_AT
+ENV REFRESHED_AT=$REFRESHED_AT
 
 RUN echo @old-stable https://dl-cdn.alpinelinux.org/alpine/v3.22/community >> /etc/apk/repositories \
   && echo @old-stable https://dl-cdn.alpinelinux.org/alpine/v3.22/main >> /etc/apk/repositories \

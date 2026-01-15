@@ -1,8 +1,8 @@
 FROM ruby:3.4-slim
-LABEL maintainer "Tim Brust <github@timbrust.de>"
+LABEL maintainer="Tim Prüssing <github@timbrust.de>"
 
 ARG REFRESHED_AT
-ENV REFRESHED_AT $REFRESHED_AT
+ENV REFRESHED_AT=$REFRESHED_AT
 ARG NODE_MAJOR=24
 
 # hadolint ignore=DL3009
